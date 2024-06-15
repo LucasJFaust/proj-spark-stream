@@ -1,0 +1,234 @@
+24/06/15 16:30:43 WARN Utils: Your hostname, faust-ubuntu resolves to a loopback address: 127.0.1.1; using 192.168.1.228 instead (on interface enp58s0)
+24/06/15 16:30:43 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+24/06/15 16:30:44 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+24/06/15 16:30:45 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+24/06/15 16:30:45 INFO SharedState: Warehouse path is 'file:/home/faust/Projetos/XP/Bootcamp_eng/proj-spark-stream/python/spark-warehouse'.
+24/06/15 16:30:46 INFO StateStoreCoordinatorRef: Registered StateStoreCoordinator endpoint
+24/06/15 16:30:46 INFO ResolveWriteToStream: Checkpoint root chk-point-dir resolved to file:/home/faust/Projetos/XP/Bootcamp_eng/proj-spark-stream/python/chk-point-dir.
+24/06/15 16:30:46 WARN ResolveWriteToStream: spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+24/06/15 16:30:46 INFO MicroBatchExecution: Starting [id = 7ee802d5-e3d6-42b9-bd85-5e71f7fa0c92, runId = 2e5f5119-8402-4b72-8190-270941078522]. Use file:/home/faust/Projetos/XP/Bootcamp_eng/proj-spark-stream/python/chk-point-dir to store the query checkpoint.
+24/06/15 16:30:46 INFO MicroBatchExecution: Reading table [org.apache.spark.sql.kafka010.KafkaSourceProvider$KafkaTable@2a183f20] from DataSourceV2 named 'kafka' [org.apache.spark.sql.kafka010.KafkaSourceProvider@66dd287c]
+24/06/15 16:30:46 INFO OffsetSeqLog: BatchIds found from listing: 0
+24/06/15 16:30:46 INFO OffsetSeqLog: Getting latest batch 0
+24/06/15 16:30:46 INFO OffsetSeqLog: BatchIds found from listing: 0
+24/06/15 16:30:46 INFO OffsetSeqLog: Getting latest batch 0
+24/06/15 16:30:46 INFO CommitLog: BatchIds found from listing: 
+24/06/15 16:30:46 INFO MicroBatchExecution: no commit log present
+24/06/15 16:30:46 INFO MicroBatchExecution: Resuming at batch 0 with committed offsets {} and available offsets {KafkaV2[Subscribe[sales-transactions]]: {"sales-transactions":{"0":23}}}
+24/06/15 16:30:46 INFO MicroBatchExecution: Stream started from {}
+24/06/15 16:30:47 ERROR MicroBatchExecution: Query [id = 7ee802d5-e3d6-42b9-bd85-5e71f7fa0c92, runId = 2e5f5119-8402-4b72-8190-270941078522] terminated with error
+java.lang.NoClassDefFoundError: org/apache/spark/sql/internal/connector/SupportsStreamingUpdate
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1022)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:174)
+	at java.base/java.net.URLClassLoader.defineClass(URLClassLoader.java:555)
+	at java.base/java.net.URLClassLoader$1.run(URLClassLoader.java:458)
+	at java.base/java.net.URLClassLoader$1.run(URLClassLoader.java:452)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:451)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:594)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:527)
+	at org.apache.spark.sql.kafka010.KafkaSourceProvider$KafkaTable.newWriteBuilder(KafkaSourceProvider.scala:397)
+	at org.apache.spark.sql.execution.datasources.v2.V2Writes$.org$apache$spark$sql$execution$datasources$v2$V2Writes$$newWriteBuilder(V2Writes.scala:145)
+	at org.apache.spark.sql.execution.datasources.v2.V2Writes$$anonfun$apply$1.applyOrElse(V2Writes.scala:91)
+	at org.apache.spark.sql.execution.datasources.v2.V2Writes$$anonfun$apply$1.applyOrElse(V2Writes.scala:44)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformDownWithPruning$1(TreeNode.scala:461)
+	at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(origin.scala:76)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDownWithPruning(TreeNode.scala:461)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.org$apache$spark$sql$catalyst$plans$logical$AnalysisHelper$$super$transformDownWithPruning(LogicalPlan.scala:32)
+	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning(AnalysisHelper.scala:267)
+	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning$(AnalysisHelper.scala:263)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:32)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:32)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDown(TreeNode.scala:437)
+	at org.apache.spark.sql.execution.datasources.v2.V2Writes$.apply(V2Writes.scala:44)
+	at org.apache.spark.sql.execution.datasources.v2.V2Writes$.apply(V2Writes.scala:40)
+	at org.apache.spark.sql.catalyst.rules.RuleExecutor.$anonfun$execute$2(RuleExecutor.scala:222)
+	at scala.collection.LinearSeqOptimized.foldLeft(LinearSeqOptimized.scala:126)
+	at scala.collection.LinearSeqOptimized.foldLeft$(LinearSeqOptimized.scala:122)
+	at scala.collection.immutable.List.foldLeft(List.scala:91)
+	at org.apache.spark.sql.catalyst.rules.RuleExecutor.$anonfun$execute$1(RuleExecutor.scala:219)
+	at org.apache.spark.sql.catalyst.rules.RuleExecutor.$anonfun$execute$1$adapted(RuleExecutor.scala:211)
+	at scala.collection.immutable.List.foreach(List.scala:431)
+	at org.apache.spark.sql.catalyst.rules.RuleExecutor.execute(RuleExecutor.scala:211)
+	at org.apache.spark.sql.catalyst.rules.RuleExecutor.$anonfun$executeAndTrack$1(RuleExecutor.scala:182)
+	at org.apache.spark.sql.catalyst.QueryPlanningTracker$.withTracker(QueryPlanningTracker.scala:89)
+	at org.apache.spark.sql.catalyst.rules.RuleExecutor.executeAndTrack(RuleExecutor.scala:182)
+	at org.apache.spark.sql.execution.streaming.IncrementalExecution.$anonfun$optimizedPlan$1(IncrementalExecution.scala:92)
+	at org.apache.spark.sql.catalyst.QueryPlanningTracker.measurePhase(QueryPlanningTracker.scala:138)
+	at org.apache.spark.sql.execution.QueryExecution.$anonfun$executePhase$2(QueryExecution.scala:219)
+	at org.apache.spark.sql.execution.QueryExecution$.withInternalError(QueryExecution.scala:546)
+	at org.apache.spark.sql.execution.QueryExecution.$anonfun$executePhase$1(QueryExecution.scala:219)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+	at org.apache.spark.sql.execution.QueryExecution.executePhase(QueryExecution.scala:218)
+	at org.apache.spark.sql.execution.streaming.IncrementalExecution.optimizedPlan$lzycompute(IncrementalExecution.scala:84)
+	at org.apache.spark.sql.execution.streaming.IncrementalExecution.optimizedPlan(IncrementalExecution.scala:84)
+	at org.apache.spark.sql.execution.QueryExecution.assertOptimized(QueryExecution.scala:162)
+	at org.apache.spark.sql.execution.QueryExecution.executedPlan$lzycompute(QueryExecution.scala:182)
+	at org.apache.spark.sql.execution.QueryExecution.executedPlan(QueryExecution.scala:179)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runBatch$15(MicroBatchExecution.scala:720)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken(ProgressReporter.scala:427)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken$(ProgressReporter.scala:425)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.reportTimeTaken(StreamExecution.scala:67)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.runBatch(MicroBatchExecution.scala:708)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runActivatedStream$2(MicroBatchExecution.scala:286)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken(ProgressReporter.scala:427)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken$(ProgressReporter.scala:425)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.reportTimeTaken(StreamExecution.scala:67)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runActivatedStream$1(MicroBatchExecution.scala:249)
+	at org.apache.spark.sql.execution.streaming.ProcessingTimeExecutor.execute(TriggerExecutor.scala:67)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.runActivatedStream(MicroBatchExecution.scala:239)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.$anonfun$runStream$1(StreamExecution.scala:311)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.org$apache$spark$sql$execution$streaming$StreamExecution$$runStream(StreamExecution.scala:289)
+	at org.apache.spark.sql.execution.streaming.StreamExecution$$anon$1.$anonfun$run$1(StreamExecution.scala:211)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.JobArtifactSet$.withActiveJobArtifactState(JobArtifactSet.scala:94)
+	at org.apache.spark.sql.execution.streaming.StreamExecution$$anon$1.run(StreamExecution.scala:211)
+Caused by: java.lang.ClassNotFoundException: org.apache.spark.sql.internal.connector.SupportsStreamingUpdate
+	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:476)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:594)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:527)
+	... 69 more
+24/06/15 16:30:47 INFO MicroBatchExecution: Async log purge executor pool for query [id = 7ee802d5-e3d6-42b9-bd85-5e71f7fa0c92, runId = 2e5f5119-8402-4b72-8190-270941078522] has been shutdown
+Exception in thread "stream execution thread for [id = 7ee802d5-e3d6-42b9-bd85-5e71f7fa0c92, runId = 2e5f5119-8402-4b72-8190-270941078522]" java.lang.NoClassDefFoundError: org/apache/spark/sql/internal/connector/SupportsStreamingUpdate
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1022)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:174)
+	at java.base/java.net.URLClassLoader.defineClass(URLClassLoader.java:555)
+	at java.base/java.net.URLClassLoader$1.run(URLClassLoader.java:458)
+	at java.base/java.net.URLClassLoader$1.run(URLClassLoader.java:452)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:451)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:594)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:527)
+	at org.apache.spark.sql.kafka010.KafkaSourceProvider$KafkaTable.newWriteBuilder(KafkaSourceProvider.scala:397)
+	at org.apache.spark.sql.execution.datasources.v2.V2Writes$.org$apache$spark$sql$execution$datasources$v2$V2Writes$$newWriteBuilder(V2Writes.scala:145)
+	at org.apache.spark.sql.execution.datasources.v2.V2Writes$$anonfun$apply$1.applyOrElse(V2Writes.scala:91)
+	at org.apache.spark.sql.execution.datasources.v2.V2Writes$$anonfun$apply$1.applyOrElse(V2Writes.scala:44)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformDownWithPruning$1(TreeNode.scala:461)
+	at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(origin.scala:76)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDownWithPruning(TreeNode.scala:461)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.org$apache$spark$sql$catalyst$plans$logical$AnalysisHelper$$super$transformDownWithPruning(LogicalPlan.scala:32)
+	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning(AnalysisHelper.scala:267)
+	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning$(AnalysisHelper.scala:263)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:32)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:32)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDown(TreeNode.scala:437)
+	at org.apache.spark.sql.execution.datasources.v2.V2Writes$.apply(V2Writes.scala:44)
+	at org.apache.spark.sql.execution.datasources.v2.V2Writes$.apply(V2Writes.scala:40)
+	at org.apache.spark.sql.catalyst.rules.RuleExecutor.$anonfun$execute$2(RuleExecutor.scala:222)
+	at scala.collection.LinearSeqOptimized.foldLeft(LinearSeqOptimized.scala:126)
+	at scala.collection.LinearSeqOptimized.foldLeft$(LinearSeqOptimized.scala:122)
+	at scala.collection.immutable.List.foldLeft(List.scala:91)
+	at org.apache.spark.sql.catalyst.rules.RuleExecutor.$anonfun$execute$1(RuleExecutor.scala:219)
+	at org.apache.spark.sql.catalyst.rules.RuleExecutor.$anonfun$execute$1$adapted(RuleExecutor.scala:211)
+	at scala.collection.immutable.List.foreach(List.scala:431)
+	at org.apache.spark.sql.catalyst.rules.RuleExecutor.execute(RuleExecutor.scala:211)
+	at org.apache.spark.sql.catalyst.rules.RuleExecutor.$anonfun$executeAndTrack$1(RuleExecutor.scala:182)
+	at org.apache.spark.sql.catalyst.QueryPlanningTracker$.withTracker(QueryPlanningTracker.scala:89)
+	at org.apache.spark.sql.catalyst.rules.RuleExecutor.executeAndTrack(RuleExecutor.scala:182)
+	at org.apache.spark.sql.execution.streaming.IncrementalExecution.$anonfun$optimizedPlan$1(IncrementalExecution.scala:92)
+	at org.apache.spark.sql.catalyst.QueryPlanningTracker.measurePhase(QueryPlanningTracker.scala:138)
+	at org.apache.spark.sql.execution.QueryExecution.$anonfun$executePhase$2(QueryExecution.scala:219)
+	at org.apache.spark.sql.execution.QueryExecution$.withInternalError(QueryExecution.scala:546)
+	at org.apache.spark.sql.execution.QueryExecution.$anonfun$executePhase$1(QueryExecution.scala:219)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+	at org.apache.spark.sql.execution.QueryExecution.executePhase(QueryExecution.scala:218)
+	at org.apache.spark.sql.execution.streaming.IncrementalExecution.optimizedPlan$lzycompute(IncrementalExecution.scala:84)
+	at org.apache.spark.sql.execution.streaming.IncrementalExecution.optimizedPlan(IncrementalExecution.scala:84)
+	at org.apache.spark.sql.execution.QueryExecution.assertOptimized(QueryExecution.scala:162)
+	at org.apache.spark.sql.execution.QueryExecution.executedPlan$lzycompute(QueryExecution.scala:182)
+	at org.apache.spark.sql.execution.QueryExecution.executedPlan(QueryExecution.scala:179)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runBatch$15(MicroBatchExecution.scala:720)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken(ProgressReporter.scala:427)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken$(ProgressReporter.scala:425)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.reportTimeTaken(StreamExecution.scala:67)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.runBatch(MicroBatchExecution.scala:708)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runActivatedStream$2(MicroBatchExecution.scala:286)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken(ProgressReporter.scala:427)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken$(ProgressReporter.scala:425)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.reportTimeTaken(StreamExecution.scala:67)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runActivatedStream$1(MicroBatchExecution.scala:249)
+	at org.apache.spark.sql.execution.streaming.ProcessingTimeExecutor.execute(TriggerExecutor.scala:67)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.runActivatedStream(MicroBatchExecution.scala:239)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.$anonfun$runStream$1(StreamExecution.scala:311)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.org$apache$spark$sql$execution$streaming$StreamExecution$$runStream(StreamExecution.scala:289)
+	at org.apache.spark.sql.execution.streaming.StreamExecution$$anon$1.$anonfun$run$1(StreamExecution.scala:211)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.JobArtifactSet$.withActiveJobArtifactState(JobArtifactSet.scala:94)
+	at org.apache.spark.sql.execution.streaming.StreamExecution$$anon$1.run(StreamExecution.scala:211)
+Caused by: java.lang.ClassNotFoundException: org.apache.spark.sql.internal.connector.SupportsStreamingUpdate
+	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:476)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:594)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:527)
+	... 69 more
+root
+ |-- key: binary (nullable = true)
+ |-- value: binary (nullable = true)
+ |-- topic: string (nullable = true)
+ |-- partition: integer (nullable = true)
+ |-- offset: long (nullable = true)
+ |-- timestamp: timestamp (nullable = true)
+ |-- timestampType: integer (nullable = true)
+
+root
+ |-- transactionId: string (nullable = true)
+ |-- productId: string (nullable = true)
+ |-- productName: string (nullable = true)
+ |-- productCategory: string (nullable = true)
+ |-- productPrice: float (nullable = true)
+ |-- productQuantity: integer (nullable = true)
+ |-- productBrand: string (nullable = true)
+ |-- currency: string (nullable = true)
+ |-- customerId: string (nullable = true)
+ |-- transactionDate: timestamp (nullable = true)
+ |-- paymentMethod: string (nullable = true)
+
+root
+ |-- transactionId: string (nullable = true)
+ |-- productId: string (nullable = true)
+ |-- productName: string (nullable = true)
+ |-- productCategory: string (nullable = true)
+ |-- productPrice: float (nullable = true)
+ |-- productQuantity: integer (nullable = true)
+ |-- productBrand: string (nullable = true)
+ |-- currency: string (nullable = true)
+ |-- customerId: string (nullable = true)
+ |-- transactionDate: timestamp (nullable = true)
+ |-- paymentMethod: string (nullable = true)
+ |-- totalAmount: float (nullable = true)
+
+Traceback (most recent call last):
+  File "/home/faust/Projetos/XP/Bootcamp_eng/proj-spark-stream/python/sparkmain.py", line 65, in <module>
+    .start().awaitTermination()
+             ^^^^^^^^^^^^^^^^^^
+  File "/home/faust/Projetos/XP/Bootcamp_eng/proj-spark-stream/.venv/lib/python3.12/site-packages/pyspark/sql/streaming/query.py", line 221, in awaitTermination
+    return self._jsq.awaitTermination()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/faust/Projetos/XP/Bootcamp_eng/proj-spark-stream/.venv/lib/python3.12/site-packages/py4j/java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+                   ^^^^^^^^^^^^^^^^^
+  File "/home/faust/Projetos/XP/Bootcamp_eng/proj-spark-stream/.venv/lib/python3.12/site-packages/pyspark/errors/exceptions/captured.py", line 185, in deco
+    raise converted from None
+pyspark.errors.exceptions.captured.StreamingQueryException: [STREAM_FAILED] Query [id = 7ee802d5-e3d6-42b9-bd85-5e71f7fa0c92, runId = 2e5f5119-8402-4b72-8190-270941078522] terminated with exception: org/apache/spark/sql/internal/connector/SupportsStreamingUpdate
+24/06/15 16:30:47 INFO SparkContext: Invoking stop() from shutdown hook
+24/06/15 16:30:47 INFO SparkContext: SparkContext is stopping with exitCode 0.
+24/06/15 16:30:47 INFO SparkUI: Stopped Spark web UI at http://localhost:4040
+24/06/15 16:30:47 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+24/06/15 16:30:47 INFO MemoryStore: MemoryStore cleared
+24/06/15 16:30:47 INFO BlockManager: BlockManager stopped
+24/06/15 16:30:47 INFO BlockManagerMaster: BlockManagerMaster stopped
+24/06/15 16:30:47 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+24/06/15 16:30:47 INFO SparkContext: Successfully stopped SparkContext
+24/06/15 16:30:47 INFO ShutdownHookManager: Shutdown hook called
+24/06/15 16:30:47 INFO ShutdownHookManager: Deleting directory /tmp/spark-3941ed06-4fb3-4184-8b6e-da4f6acf2099
+24/06/15 16:30:47 INFO ShutdownHookManager: Deleting directory /tmp/spark-76c6b99b-31de-495f-b922-6e99952c46f1
+24/06/15 16:30:47 INFO ShutdownHookManager: Deleting directory /tmp/spark-76c6b99b-31de-495f-b922-6e99952c46f1/pyspark-80769357-02e2-4087-b646-0cbf3ecd5ecc
